@@ -5,18 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TorreFuerte | Ministerio Musical</title>
     <link rel="stylesheet" href="style.css">
-    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap" rel="stylesheet">
+</head>
 <body>
+
+    <div id="preloader">
+        <div class="texto-preloader">Torre Fuerte</div>
+    </div>
 
     <header id="header-principal">
         <nav class="navbar">
             <div class="logo">
                 <a href="#inicio">TorreFuerte</a>
             </div>
+            <div class="menu-hamburguesa" id="menu-hamburguesa">
+                <div class="linea1"></div>
+                <div class="linea2"></div>
+                <div class="linea3"></div>
+            </div>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#quienes-somos">Ministerio</a></li>
                 <li><a href="#musica">Música</a></li>
+                <li><a href="#galeria-fotos">Galería</a></li>
+                <li><a href="#videoclips">Videos</a></li>
                 <li><a href="#agenda">Agenda</a></li>
                 <li><a href="#comunidad">Comunidad</a></li>
                 <li><a href="#contacto">Contacto</a></li>
@@ -42,30 +56,54 @@
                 <p>TorreFuerte nació con la visión de conectar corazones a través de la adoración genuina...</p>
                 
                 <div class="grid-integrantes">
-                    <article class="card-integrante">
-                        <h3>David</h3>
-                        <p>Voz Principal y Guitarra Acústica</p>
-                    </article>
-                    <article class="card-integrante">
-                        <h3>Mateo</h3>
-                        <p>Batería y Percusión</p>
-                    </article>
-                    </div>
+    <article class="card-integrante">
+        <div class="foto-integrante">
+            <img src="img/img4.png" alt="David - Voz Principal">
+        </div>
+        <h3>David</h3>
+        <p>Voz Principal y Guitarra Acústica</p>
+    </article>
+    
+    <article class="card-integrante">
+        <div class="foto-integrante">
+            <img src="img/img3.png" alt="Mateo - Batería">
+        </div>
+        <h3>Mateo</h3>
+        <p>Batería y Percusión</p>
+    </article>
+</div>
             </div>
         </section>
 
-        <section id="musica" class="seccion-destacada">
+        <section id="galeria-fotos" class="seccion-info">
             <div class="contenedor">
-                <h2>Discografía y Recursos</h2>
-                <div class="grid-musica">
-                    <article class="card-cancion">
-                        <h3>Tu Gracia (Sencillo)</h3>
-                        <div class="reproductor-placeholder">
-                            <p>[Reproductor de Audio]</p>
-                        </div>
-                        <div class="recursos-descarga">
-                            <a href="archivos/tu-gracia-acordes.pdf" download class="btn-descarga">Descargar Acordes (PDF)</a>
-                        </div>
+                <h2>Nuestra Trayectoria en Imágenes</h2>
+                <p>Momentos especiales de adoración y ministerio.</p>
+                
+                <div class="carrusel-contenedor">
+                    <button class="carrusel-btn prev">&#10094;</button> <div class="carrusel-slide">
+                        <img src="img/con1.png" alt="Concierto de adoración">
+                        <img src="img/con2.png" alt="Banda tocando en vivo">
+                        <img src="img/con3.png" alt="Ensayo del ministerio">
+                    </div>
+                    <button class="carrusel-btn next">&#10095;</button> </div>
+            </div>
+        </section>
+
+        <section id="videoclips" class="seccion-destacada">
+            <div class="contenedor">
+                <h2>Nuestros Videoclips</h2>
+                <p>Disfruta de nuestras últimas producciones audiovisuales en YouTube.</p>
+                
+                <div class="grid-videos">
+                    <article class="card-video">
+                        <iframe src="https://www.youtube.com/embed/W_gTC29-imQ?si=rlQkV3df04Ca6gOy" title="Videoclip Oficial 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <h3>Tu Gracia (Video Oficial)</h3>
+                    </article>
+                    
+                    <article class="card-video">
+                        <iframe src="https://www.youtube.com/embed/qYDFAfKKZUc?si=hBh5NqRoHAtc1mNn" title="Videoclip Oficial 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <h3>Renovación - Sesión Acústica</h3>
                     </article>
                 </div>
             </div>
@@ -132,36 +170,40 @@
         </section>
 
         <section id="contacto" class="seccion-info">
-            <div class="contenedor">
-                <h2>Invita a TorreFuerte</h2>
-                <p>¿Te gustaría que seamos parte de tu próximo evento o servicio?</p>
-                
-                <form action="procesar_contacto.php" method="POST" class="formulario-contacto">
-                    <div class="grupo-input">
-                        <label for="nombre-contacto">Nombre / Iglesia:</label>
-                        <input type="text" id="nombre-contacto" name="nombre" required>
-                    </div>
-                    <div class="grupo-input">
-                        <label for="email-contacto">Correo Electrónico:</label>
-                        <input type="email" id="email-contacto" name="email" required>
-                    </div>
-                    <div class="grupo-input">
-                        <label for="tipo-evento">Tipo de Evento:</label>
-                        <select id="tipo-evento" name="tipo_evento">
-                            <option value="culto">Servicio Dominical</option>
-                            <option value="congreso">Congreso/Campamento</option>
-                            <option value="concierto">Concierto</option>
-                            <option value="otro">Otro</option>
-                        </select>
-                    </div>
-                    <div class="grupo-input">
-                        <label for="mensaje-contacto">Detalles adicionales:</label>
-                        <textarea id="mensaje-contacto" name="mensaje" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primario">Enviar Invitación</button>
-                </form>
-            </div>
-        </section>
+    <div class="contenedor grid-dividido">
+        
+        <div class="galeria-tiras">
+            <div class="tira"><img src="img/img2.png" alt="TorreFuerte en vivo 1"></div>
+            <div class="tira"><img src="img/img3.png" alt="TorreFuerte en vivo 2"></div>
+            <div class="tira"><img src="img/img4.png" alt="TorreFuerte en vivo 3"></div>
+            <div class="tira"><img src="img/img5.png" alt="TorreFuerte en vivo 4"></div>
+            
+        </div>
+
+        <div class="contenido-texto">
+            <div class="subtitulo">🏛️ Contáctanos</div>
+            <h2>Descubre Nuestro Legado</h2>
+            <p>¿Te gustaría que seamos parte de tu próximo evento o servicio? Escríbenos y lleva adoración genuina a tu congregación.</p>
+            
+            <ul class="lista-iconos">
+                <li><span class="icono">📍</span> Cerro de Pasco, Pasco, Perú</li>
+                <li><span class="icono">📧</span> invitaciones@torrefuerte.com</li>
+                <li><span class="icono">📱</span> +51 928 109 252</li>
+            </ul>
+
+            <form action="procesar_contacto.php" method="POST" class="formulario-contacto form-limpio">
+                <div class="grupo-input">
+                    <input type="text" id="nombre-contacto" name="nombre" placeholder="Nombre / Iglesia" required>
+                </div>
+                <div class="grupo-input">
+                    <input type="email" id="email-contacto" name="email" placeholder="Correo Electrónico" required>
+                </div>
+                <button type="submit" class="btn btn-primario">Enviar Mensaje</button>
+            </form>
+        </div>
+        
+    </div>
+</section>
     </main>
 
     <footer class="footer-principal">
@@ -171,9 +213,9 @@
                 <p>Ministerio Musical Evangélico</p>
             </div>
             <div class="footer-redes">
-                <a href="#">Facebook</a>
+                <a href="https://www.facebook.com/profile.php?id=100063501281012">Facebook</a>
                 <a href="#">Instagram</a>
-                <a href="#">YouTube</a>
+                <a href="https://www.youtube.com/@maycolvicenteyalico8802">YouTube</a>
             </div>
         </div>
         <div class="footer-copyright">
@@ -181,5 +223,6 @@
         </div>
     </footer>
 
-    </body>
+    <script src="app.js"></script>
+</body>
 </html>
