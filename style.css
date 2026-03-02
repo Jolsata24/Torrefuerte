@@ -1,0 +1,585 @@
+/* ==========================================================================
+   1. VARIABLES Y CONFIGURACIÓN BASE
+   ========================================================================== */
+:root {
+    /* Paleta de Colores: Blancos y Rosados */
+    --blanco-puro: #ffffff;
+    --blanco-fondo: #fbfbfb; /* Un blanco ligeramente grisáceo para que las tarjetas resalten */
+    --rosado-fuerte: #e91e63; /* Color de acento principal */
+    --rosado-hover: #c2185b;  /* Para cuando el cursor pase por los botones */
+    --rosado-claro: #fce4ec;  /* Excelente para fondos sutiles */
+    
+    /* Textos */
+    --texto-oscuro: #2c3e50;
+    --texto-parrafo: #546e7a;
+    
+    /* Sombras y transiciones */
+    --sombra-suave: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --transicion: all 0.3s ease;
+}
+
+/* Reseteo universal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Para que el menú navegue suavemente hacia las secciones */
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--blanco-fondo);
+    color: var(--texto-parrafo);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    color: var(--texto-oscuro);
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    transition: var(--transicion);
+}
+
+/* ==========================================================================
+   2. NAVEGACIÓN (HEADER)
+   ========================================================================== */
+#header-principal {
+    background-color: var(--blanco-puro);
+    box-shadow: var(--sombra-suave);
+    position: fixed; /* Fijo en la parte superior */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--rosado-fuerte);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links li a {
+    color: var(--texto-oscuro);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.nav-links li a:hover {
+    color: var(--rosado-fuerte);
+}
+
+/* ==========================================================================
+   3. BOTONES GLOBALES
+   ========================================================================== */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px; /* Bordes redondeados modernos y amigables */
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: var(--transicion);
+}
+
+.btn-primario {
+    background-color: var(--rosado-fuerte);
+    color: var(--blanco-puro);
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3); /* Sombra rosada suave */
+}
+
+.btn-primario:hover {
+    background-color: var(--rosado-hover);
+    color: var(--blanco-puro);
+    transform: translateY(-3px); /* El botón "salta" un poquito hacia arriba */
+    box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: var(--rosado-fuerte);
+    border-color: var(--rosado-fuerte); /* Botón con borde rosado y fondo transparente */
+}
+
+.btn-secundario:hover {
+    background-color: var(--rosado-claro);
+    color: var(--rosado-hover);
+    border-color: var(--rosado-hover);
+    transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   4. SECCIÓN INICIO (HERO)
+   ========================================================================== */
+.hero-section {
+    /* Gradiente blanco y rosado semitransparente sobre una imagen de adoración */
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(252, 228, 236, 0.9)), 
+                url('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    min-height: 100vh; /* Ocupa el 100% del alto de la pantalla */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-contenido {
+    max-width: 800px;
+    margin-top: 60px; /* Evita que el texto se esconda detrás del menú fijo */
+}
+
+.hero-contenido h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--texto-oscuro);
+    margin-bottom: 1rem;
+}
+
+.hero-contenido h1 span {
+    color: var(--rosado-fuerte); /* Aplica el rosado solo a la palabra destacada */
+}
+
+.hero-contenido p {
+    font-size: 1.2rem;
+    color: var(--texto-parrafo);
+    margin-bottom: 2rem;
+}
+
+.hero-botones {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que los botones se acomoden uno debajo del otro en celulares */
+}
+
+/* ==========================================================================
+   5. ESTILOS GENERALES DE SECCIONES
+   ========================================================================== */
+.seccion-info {
+    background-color: var(--blanco-puro);
+    padding: 5rem 2rem; /* Espaciado generoso arriba/abajo y a los lados */
+}
+
+.seccion-destacada {
+    background-color: var(--blanco-fondo); /* Un fondo ligeramente distinto para contrastar */
+    padding: 5rem 2rem;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenido en pantallas grandes */
+    text-align: center;
+}
+
+.contenedor h2 {
+    font-size: 2.5rem;
+    color: var(--texto-oscuro);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Línea rosada decorativa debajo de los títulos (h2) */
+.contenedor h2::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background-color: var(--rosado-fuerte);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.contenedor > p {
+    max-width: 700px;
+    margin: 0 auto 3rem auto; /* Centra el párrafo introductorio de cada sección */
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   6. MINISTERIO (TARJETAS DE INTEGRANTES)
+   ========================================================================== */
+.grid-integrantes {
+    display: grid;
+    /* Esto hace la magia del diseño responsivo automáticamente */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.card-integrante {
+    background-color: var(--blanco-puro);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--sombra-suave);
+    transition: var(--transicion);
+    border: 1px solid #f0f0f0;
+}
+
+.card-integrante:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    border-bottom: 4px solid var(--rosado-fuerte);
+}
+
+.card-integrante h3 {
+    color: var(--rosado-fuerte);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   7. MÚSICA Y RECURSOS
+   ========================================================================== */
+.grid-musica {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    text-align: left; /* Alineamos el texto de la música a la izquierda */
+}
+
+.card-cancion {
+    background-color: var(--blanco-puro);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--sombra-suave);
+    border-left: 5px solid var(--rosado-fuerte); /* Un detalle visual distinto al hover */
+    transition: var(--transicion);
+}
+
+.card-cancion:hover {
+    box-shadow: 0 8px 15px rgba(233, 30, 99, 0.15); /* Sombra con un ligero tono rosado */
+}
+
+.card-cancion h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.reproductor-placeholder {
+    background-color: var(--rosado-claro);
+    color: var(--rosado-fuerte);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    border: 2px dashed var(--rosado-fuerte);
+}
+
+.recursos-descarga {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-descarga {
+    color: var(--rosado-fuerte);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-descarga:hover {
+    color: var(--rosado-hover);
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   8. AGENDA Y EVENTOS (DISEÑO TIPO LISTA)
+   ========================================================================== */
+.lista-eventos {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left; /* Alineamos los eventos a la izquierda */
+}
+
+.item-evento {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--blanco-fondo);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+    transition: var(--transicion);
+    border-left: 4px solid transparent;
+}
+
+.item-evento:hover {
+    border-left-color: var(--rosado-fuerte);
+    transform: translateX(8px); /* Desplaza el evento ligeramente a la derecha */
+    background-color: var(--blanco-puro);
+}
+
+.fecha-evento {
+    background-color: var(--rosado-claro);
+    color: var(--rosado-fuerte);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 90px;
+}
+
+.fecha-evento .dia {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.fecha-evento .mes {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.detalles-evento {
+    flex-grow: 1;
+    padding: 0 2rem;
+}
+
+.detalles-evento h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+}
+
+/* El botón outline para los eventos */
+.btn-outline {
+    border: 2px solid var(--rosado-fuerte);
+    color: var(--rosado-fuerte);
+    padding: 0.6rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+.btn-outline:hover {
+    background-color: var(--rosado-fuerte);
+    color: var(--blanco-puro);
+}
+
+/* ==========================================================================
+   9. FORMULARIOS (CONTACTO Y COMUNIDAD)
+   ========================================================================== */
+.formulario-comunidad, 
+.formulario-contacto {
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: var(--blanco-puro);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Sombra un poco más amplia */
+    text-align: left;
+}
+
+.grupo-input {
+    margin-bottom: 1.5rem;
+}
+
+.grupo-input label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--texto-oscuro);
+    font-size: 0.95rem;
+}
+
+.grupo-input input,
+.grupo-input select,
+.grupo-input textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--texto-oscuro);
+    background-color: var(--blanco-fondo);
+    transition: var(--transicion);
+}
+
+/* Efecto al hacer clic en un input */
+.grupo-input input:focus,
+.grupo-input select:focus,
+.grupo-input textarea:focus {
+    outline: none;
+    border-color: var(--rosado-fuerte);
+    box-shadow: 0 0 0 4px var(--rosado-claro); /* Resplandor rosado */
+    background-color: var(--blanco-puro);
+}
+
+/* ==========================================================================
+   10. MURO DE PETICIONES (TESTIMONIOS)
+   ========================================================================== */
+.muro-mensajes {
+    margin-top: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.mensaje-oracion {
+    background-color: var(--blanco-puro);
+    border-left: 5px solid var(--rosado-fuerte);
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0 12px 12px 0;
+    box-shadow: var(--sombra-suave);
+    font-style: italic;
+    color: var(--texto-parrafo);
+    position: relative;
+}
+
+.mensaje-oracion p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.mensaje-oracion cite {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 700;
+    color: var(--texto-oscuro);
+    font-style: normal;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   11. FOOTER (PIE DE PÁGINA)
+   ========================================================================== */
+.footer-principal {
+    background-color: var(--texto-oscuro); /* Un gris muy oscuro para contraste */
+    color: var(--blanco-puro);
+    padding: 4rem 2rem 1.5rem;
+    text-align: left;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Para que en celulares se ponga uno abajo de otro */
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-info h3 {
+    color: var(--rosado-fuerte);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-info p {
+    color: #a0aec0; /* Gris claro */
+}
+
+.footer-redes a {
+    color: var(--blanco-puro);
+    margin-left: 1.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.footer-redes a:hover {
+    color: var(--rosado-fuerte);
+}
+
+.footer-copyright {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea divisoria muy sutil */
+    color: #a0aec0;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   12. RESPONSIVE DESIGN (ADAPTACIÓN A CELULARES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero-contenido h1 {
+        font-size: 2.5rem;
+    }
+
+    .item-evento {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .detalles-evento {
+        padding: 0;
+    }
+
+    .formulario-comunidad, 
+    .formulario-contacto {
+        padding: 2rem 1.5rem;
+    }
+
+    .footer-grid {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-redes a {
+        margin: 0 0.8rem;
+    }
+}
+/* Clase que añadirá JavaScript dinámicamente */
+.nav-links li a.activo {
+    color: var(--rosado-fuerte);
+    position: relative;
+}
+
+.nav-links li a.activo::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--rosado-fuerte);
+    bottom: -5px;
+    left: 0;
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TorreFuerte | Ministerio Musical</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+    <header id="header-principal">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#inicio">TorreFuerte</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#quienes-somos">Ministerio</a></li>
+                <li><a href="#musica">Música</a></li>
+                <li><a href="#agenda">Agenda</a></li>
+                <li><a href="#comunidad">Comunidad</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero-section">
+            <div class="hero-contenido">
+                <h1>Adoración que <span>Transforma</span></h1>
+                <p>Llevando el mensaje de esperanza y fe a través de cada acorde. Únete a nuestra comunidad.</p>
+                <div class="hero-botones">
+                    <a href="#musica" class="btn btn-primario">Escuchar Último Sencillo</a>
+                    <a href="#agenda" class="btn btn-secundario">Ver Próximos Eventos</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="quienes-somos" class="seccion-info">
+            <div class="contenedor">
+                <h2>Nuestro Ministerio</h2>
+                <p>TorreFuerte nació con la visión de conectar corazones a través de la adoración genuina...</p>
+                
+                <div class="grid-integrantes">
+                    <article class="card-integrante">
+                        <h3>David</h3>
+                        <p>Voz Principal y Guitarra Acústica</p>
+                    </article>
+                    <article class="card-integrante">
+                        <h3>Mateo</h3>
+                        <p>Batería y Percusión</p>
+                    </article>
+                    </div>
+            </div>
+        </section>
+
+        <section id="musica" class="seccion-destacada">
+            <div class="contenedor">
+                <h2>Discografía y Recursos</h2>
+                <div class="grid-musica">
+                    <article class="card-cancion">
+                        <h3>Tu Gracia (Sencillo)</h3>
+                        <div class="reproductor-placeholder">
+                            <p>[Reproductor de Audio]</p>
+                        </div>
+                        <div class="recursos-descarga">
+                            <a href="archivos/tu-gracia-acordes.pdf" download class="btn-descarga">Descargar Acordes (PDF)</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="agenda" class="seccion-info">
+            <div class="contenedor">
+                <h2>Próximas Presentaciones</h2>
+                <ul class="lista-eventos">
+                    <li class="item-evento">
+                        <div class="fecha-evento">
+                            <span class="dia">15</span>
+                            <span class="mes">Abril</span>
+                        </div>
+                        <div class="detalles-evento">
+                            <h3>Noche de Alabanza Unida</h3>
+                            <p>Coliseo Municipal, Cerro de Pasco | 18:00 hrs</p>
+                        </div>
+                        <div class="accion-evento">
+                            <a href="#contacto" class="btn btn-outline">Más Info</a>
+                        </div>
+                    </li>
+                    <li class="item-evento">
+                        <div class="fecha-evento">
+                            <span class="dia">28</span>
+                            <span class="mes">Mayo</span>
+                        </div>
+                        <div class="detalles-evento">
+                            <h3>Congreso de Jóvenes "Renovación"</h3>
+                            <p>Iglesia Central | 19:30 hrs</p>
+                        </div>
+                        <div class="accion-evento">
+                            <a href="#contacto" class="btn btn-outline">Más Info</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="comunidad" class="seccion-destacada">
+            <div class="contenedor">
+                <h2>Muro de Peticiones de Oración</h2>
+                <p>No estás solo. Déjanos tu petición y estaremos orando por ti como ministerio.</p>
+                
+                <form action="procesar_peticion.php" method="POST" class="formulario-comunidad">
+                    <div class="grupo-input">
+                        <label for="nombre-peticion">Tu Nombre (Opcional):</label>
+                        <input type="text" id="nombre-peticion" name="nombre">
+                    </div>
+                    <div class="grupo-input">
+                        <label for="mensaje-peticion">Tu Petición:</label>
+                        <textarea id="mensaje-peticion" name="peticion" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primario">Enviar Petición</button>
+                </form>
+
+                <div class="muro-mensajes">
+                    <blockquote class="mensaje-oracion">
+                        <p>"Pido oración por la salud de mi familia en este tiempo..."</p>
+                        <cite>- Anónimo</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="seccion-info">
+            <div class="contenedor">
+                <h2>Invita a TorreFuerte</h2>
+                <p>¿Te gustaría que seamos parte de tu próximo evento o servicio?</p>
+                
+                <form action="procesar_contacto.php" method="POST" class="formulario-contacto">
+                    <div class="grupo-input">
+                        <label for="nombre-contacto">Nombre / Iglesia:</label>
+                        <input type="text" id="nombre-contacto" name="nombre" required>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="email-contacto">Correo Electrónico:</label>
+                        <input type="email" id="email-contacto" name="email" required>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="tipo-evento">Tipo de Evento:</label>
+                        <select id="tipo-evento" name="tipo_evento">
+                            <option value="culto">Servicio Dominical</option>
+                            <option value="congreso">Congreso/Campamento</option>
+                            <option value="concierto">Concierto</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="mensaje-contacto">Detalles adicionales:</label>
+                        <textarea id="mensaje-contacto" name="mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primario">Enviar Invitación</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-principal">
+        <div class="contenedor footer-grid">
+            <div class="footer-info">
+                <h3>TorreFuerte</h3>
+                <p>Ministerio Musical Evangélico</p>
+            </div>
+            <div class="footer-redes">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 TorreFuerte. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    </body>
+</html>
